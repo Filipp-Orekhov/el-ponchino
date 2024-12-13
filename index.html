@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style/normalize.css">
+    <link rel ="stylesheet" href="./Style/fonts.css">
+    <link rel="stylesheet" href="./Style/style.css">
+    <title>Конструктор пончиков</title>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+        </div>
+    </header>
+    <div class="title-constructor-wrapper">
+        <h1 class="constructor-title">Конструктор пончиков</h1>
+        <p class="text-filling"> Выберите начинку, глазурь и декор, чтобы создать десерт своей мечты</p>
+    </div>
+        
+    <div class="constuctor-wrapper">
+
+        <!------Left side page----------------->
+
+        <div class="dp-flex">
+            <div class="frame" id="donut-frame">
+                <img src="images/full.png" class="image-layer" id="base-layer" />
+                <img src="images/filling/choco.png" class="image-layer" id="filling-layer" style="z-index: 1;" />
+                <div class="bg-container"></div>                   
+                <!-- Слой глазури не отображается по умолчанию -->
+                <!-- Слой глазури будет добавляться только при выборе -->
+            </div> 
+            
+            <h2 class="calories-title">КБЖУ на 1 порцию</h2> 
+           
+            <div class="nutrition">                
+                <div class="nutrition-wrapper bg-blue">
+                    <span class="nutrition-type">Ккал</span>
+                    <div class="nutrition-round">
+                        <span class="nutrition-value" id="calories">340</span>
+                    </div>    
+                </div>
+                <div class="nutrition-wrapper bg-rose">
+                    <span class="nutrition-type">Белки</span>
+                    <div class="nutrition-round">
+                        <span class="nutrition-value" id="proteins">4.5</span>
+                    </div>
+                </div>
+                <div class="nutrition-wrapper bg-light-orange">
+                    <span class="nutrition-type">Жиры</span>
+                    <div class="nutrition-round">
+                        <span id="fats">13.5</span>
+                    </div>    
+                </div>
+                <div class="nutrition-wrapper bg-light-rose">
+                    <span class="nutrition-type">Углеводы</span>
+                    <div class="nutrition-round">
+                        <span id="carbs">44.5</span>
+                    </div>    
+                </div>
+            </div> 
+        </div>                
+
+        <!------Right side page--------------------->
+        
+        <div class="dp-flex">
+
+            <!--- Filling section--------------------->
+            <h2 class="text-choose">Выбор начинки:</h2>
+            <div class="gallery-wrapper">
+                <div class="scroll-btn left-arrow inactive" id="backBtnFill">                    
+                </div>
+               <!--- <img class="scroll-btn" src="./images/arrow-left.svg" id="backBtnFill">-->
+                <div class="button-container" id="filling-buttons">            
+                    <div class="gallery-grid">
+                        <div class="option selected" data-type="filling" data-image="choco.png" data-price="45" data-calories="80" data-proteins="1" data-fats="5" data-carbs="9">
+                            <div class="round chokolate"> 
+                            </div>
+                            <span class="sort">Шоколад</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="filling" data-image="vanil.png" data-price="45" data-calories="70" data-proteins="0.5" data-fats="4" data-carbs="8">
+                            <div class="round vanil"> 
+                            </div>
+                            <span class="sort">Ваниль</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="filling" data-image="strawberry.png" data-price="50" data-calories="50" data-proteins="0.5" data-fats="1" data-carbs="12">
+                            <div class="round strawberry"> 
+                            </div>
+                            <span class="sort">Клубника</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="filling" data-image="lemon.png" data-price="45" data-calories="45" data-proteins="0.5" data-fats="0.5" data-carbs="11">
+                            <div class="round lemon"> 
+                            </div>
+                            <span class="sort">Лимон</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                    </div>   
+                    <div class="gallery-grid">
+                        <div class="option" data-type="filling" data-image="pichi.png" data-price="55" data-calories="55" data-proteins="0.5" data-fats="1" data-carbs="13">
+                            <div class="round peach"> 
+                            </div>
+                            <span class="sort">Персик</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="filling" data-image="caramel.png" data-price="85" data-calories="85" data-proteins="0.5" data-fats="4.5" data-carbs="11">
+                            <div class="round caramel"> 
+                            </div>
+                            <span class="sort">Карамель</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                    </div> 
+                </div> 
+                <div class="scroll-btn right-arrow" id="nextBtnFill">                    
+                </div> 
+               <!--- <img class="scroll-btn" src="./images/arrow-right.svg" id="nextBtnFill">  -->   
+            </div> 
+
+            <!--- Glaze section----------------------->
+            <h2 class="text-choose">Выбор глазури:</h2>
+            <div class="gallery-wrapper">
+                <!--<img class="scroll-btn" src="./images/arrow-left.svg" id="backBtnGlaze">-->
+                <div class="scroll-btn left-arrow inactive" id="backBtnGlaze">                    
+                </div> 
+                <div class="button-container" id="glaze-buttons">
+                    <div class="gallery-grid">
+                        <div class="option" data-type="glaze" data-image="choco.png" data-price="60" data-calories="60" data-proteins="0.5" data-fats="4" data-carbs="5">
+                            <div class="round chokolate"> 
+                            </div>
+                            <span class="sort">Шоколад</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="glaze" data-image="vanil.png" data-price="50" data-calories="50" data-proteins="0.5" data-fats="3" data-carbs="5">
+                            <div class="round vanil"> 
+                            </div>
+                            <span class="sort">Ваниль</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="glaze" data-image="caramel.png" data-price="65" data-calories="65" data-proteins="0.5" data-fats="4" data-carbs="6">
+                            <div class="round caramel"> 
+                            </div>
+                            <span class="sort">Карамель</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="glaze" data-image="strawberry.png" data-price="50" data-calories="50" data-proteins="0.5" data-fats="2.5" data-carbs="6">
+                            <div class="round strawberry"> 
+                            </div>
+                            <span class="sort">Клубника</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                    </div> 
+                    <div class="gallery-grid">   
+                        <div class="option" data-type="glaze" data-image="lemon.png" data-price="45" data-calories="45" data-proteins="0.5" data-fats="2" data-carbs="5.5">
+                            <div class="round lemon"> 
+                            </div>
+                            <span class="sort">Лимон</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="glaze" data-image="orange.png" data-price="50" data-calories="50" data-proteins="0.5" data-fats="3" data-carbs="5">
+                            <div class="round orange"> 
+                            </div>
+                            <span class="sort">Апельсин</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                        <div class="option" data-type="glaze" data-image="nuts.png" data-price="70" data-calories="70" data-proteins="1" data-fats="5" data-carbs="4">
+                            <div class="round nuts"> 
+                            </div>
+                            <span class="sort">Орех</span>
+                            <span class="sort-price">45 ₽</span>
+                        </div>
+                    </div>
+                </div>   <!--close button container-->
+                <div class="scroll-btn right-arrow" id="nextBtnGlaze">                    
+                </div>  
+                <!--<img class="scroll-btn" src="./images/arrow-right.svg" id="nextBtnGlaze"> -->       
+            </div> <!--close gallery wrapper-->
+
+            <!--- Topping section---------------------->
+            <h2 class="text-choose">Выбор посыпки:</h2>
+            <form class="form-wrapper">
+                <div class="topping-wrapper">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" class="optiontop" data-type="topping" data-image="coconut.png" data-price="35" 
+                            data-calories="35" data-proteins="0.3" data-fats="3" data-carbs="1.5" id="kokosCheck">
+                        <label class="topping-label" for="kokosCheck">Кокосовая стружка</label>
+                    </div>    
+                    <span class="topping-span">+30 ₽</span>
+                </div> 
+                <div class="topping-wrapper"> 
+                    <div class="checkbox-wrapper">  
+                        <input type="checkbox" class="optiontop" data-type="topping" data-image="spher.png" data-price="20" 
+                            data-calories="20" data-proteins="0" data-fats="0.5" data-carbs="4" id="ShugarCheck">
+                        <label class="topping-label" for="ShugarCheck">Сахарные бусины</label>
+                    </div>    
+                    <span class="topping-span">+25 ₽</span>
+                </div>      
+                <div class="topping-wrapper">
+                    <div class="checkbox-wrapper">  
+                        <input type="checkbox" class="optiontop" data-type="topping" data-image="choco.png" data-price="30" 
+                            data-calories="30" data-proteins="0.3" data-fats="2" data-carbs="2.5" id="chokolateCheck">
+                        <label class="topping-label" for="chokolateChek">Шоколадная крошка</label>
+                    </div>    
+                    <span class="topping-span">+25 ₽</span>
+                </div>                 
+                <div class="topping-wrapper">  
+                    <div class="checkbox-wrapper">    
+                        <input type="checkbox" class="optiontop" data-type="topping" data-image="rainbow.png" data-price="20" 
+                            data-calories="20" data-proteins="0.1" data-fats="1" data-carbs="2" id="ColorCheck">
+                        <label class="topping-label" for="ColorCheck">Цветная посыпка</label>
+                    </div>    
+                    <span class="topping-span">+20 ₽</span>
+                </div>                                   
+                <div class="topping-wrapper">  
+                    <div class="checkbox-wrapper">    
+                        <input type="checkbox" class="optiontop" data-type="topping" data-image="nuts.png" data-price="30" 
+                            data-calories="30" data-proteins="1" data-fats="2.5" data-carbs="1.5" id="NutsCheck">
+                        <label class="topping-label" for="NutsCheck">Орехи</label>
+                    </div>    
+                    <span class="topping-span">+40 ₽</span>
+                </div> 
+            </form>
+            
+            <div class="total-price-wrapper">
+               <p class="total-price-text" id="total-price">120 ₽</p>
+               <button class="btn-in-cart">В корзину</button>
+            </div>
+        </div>  <!--close right side -->  
+    </div> <!--close constructor wrapper -->
+ <footer class="footer-wrapper">  
+ </footer>    
+<script src="script.js"></script>
+    
+</body>
+</html>
