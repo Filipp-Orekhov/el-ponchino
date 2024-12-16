@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    
+    src: local(''),
+         url("../fonts/Montserrat/Montserrat-VariableFont_wght.woff"),
+         url("../fonts/Montserrat/Montserrat-VariableFont_wght.woff2");
+}
+
+
+@font-face {
+    font-family: "Rubik Doodle Shadow", serif;
+    font-style: normal;
+    font-weight: 400;
+
+    src: local(''),
+        url("../fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff"),
+        url("../fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff2");
+        /*url("../fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.svg"); Почему-то ругается на формат*/
+}
