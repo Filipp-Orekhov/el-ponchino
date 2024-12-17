@@ -28,7 +28,8 @@ img {
 body{
     min-width: 320px;
     word-break: normal;
-    font-family: 'Montserrat' , sans-serif;
+    font-family: "Montserrat-Regular" , sans-serif;
+    background-color: var(--white-color);
 }
 
 .list-reset {
@@ -51,9 +52,11 @@ body{
     --choco-color: #76473b;
     --red-text-hero-title: #BE0D15;
      --pink-color-button: #FD8878;
+     --peach-circle-background: #FFF3E3;
  }
 
 .btn-styles{
+    display: flex;
     text-align: center;
     justify-content: center;
     color: var(--white-color);
