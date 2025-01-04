@@ -34,6 +34,45 @@ document.addEventListener('DOMContentLoaded', () => {
         headerIcon.addEventListener('click', handleClickHeaderIcons);
     });
 
+    const carousel = document.querySelector(".carousel-wrapper");
+    const items = document.querySelectorAll(".carousel-card-wrapper");
+    const prevBtn = document.querySelector(".carousel-nav-left");
+    const nextBtn = document.querySelector(".carousel-nav-right");
+
+    let currentIndex = 0;
+
+    function showItem(index) {
+        // Hide all items-Скрыть все элементы
+        items.forEach(item => (item.style.display = "none"));
+
+        // Show the current item-Показать текущий элемент
+        items[index].style.display = "block";
+    }
+
+    function showNextItem() {
+        currentIndex = (currentIndex + 1) % items.length;
+        showItem(currentIndex);
+    }
+
+    function showPrevItem() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        showItem(currentIndex);
+    }
+
+    prevBtn.addEventListener("click", showPrevItem);
+    nextBtn.addEventListener("click", showNextItem);
+
+    // Initial display-Начальный дисплей
+        showItem(currentIndex);
+
+    //
+    // Reset to the first item-Возврат к первому пункту
+    //         currentIndex = 0;
+    //         showItem(currentIndex);
+    //     }catch (error){
+    //         console.error("Error fetching images from Wikipedia:", error);
+    //     }
+    // }
+    //
+    // fetchImages();
 });
-
-

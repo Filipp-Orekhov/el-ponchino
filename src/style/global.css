@@ -28,7 +28,9 @@ img {
 body{
     min-width: 320px;
     word-break: normal;
-    font-family: "Montserrat-Regular" , sans-serif;
+    font-family: "Montserrat-Regular", "Montserrat-Medium", "Montserrat-SemiBold",
+    "MontserratAlternates-regular", "MontserratAlternates-Medium", "Mulish-Regular",
+    "Roboto-Medium", "Rubik Doodle Shadow", sans-serif;
     background-color: var(--white-color);
 }
 
@@ -44,16 +46,21 @@ body{
     background-color: transparent;
     cursor: pointer;
 }
- :root{
+:root{
     --white-color: #FFFFFF;
     --light-peach-header-color: #fffcf9;
     --black-color: #000000;
     --peach-color: #ff9d9b;
     --choco-color: #76473b;
     --red-text-hero-title: #BE0D15;
-     --pink-color-button: #FD8878;
-     --peach-circle-background: #FFF3E3;
- }
+    --pink-color-button: #FD8878;
+    --peach-circle-background: #FFF3E3;
+    --brown-text: #6B4336;
+    --brown-link: #E09077;
+    --yellow-background-card: #FFF7E2;
+    --pink-background-card: #FFF2EA;
+    --blue-background-card: #ECF2FF;
+}
 
 .btn-styles{
     display: flex;

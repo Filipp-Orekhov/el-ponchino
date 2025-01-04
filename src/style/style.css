@@ -2,5 +2,7 @@
 @import url('./normalize.css');
 @import url('./global.css');
 @import url('./header.css');
-@import url('./hero.css');
+@import url('./heroSection.css');
 @import url('./advantageSection.css');
+@import url('./carouselSection.css');
+@import url('./newsSection.css');
