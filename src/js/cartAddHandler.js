@@ -1,6 +1,6 @@
-const btnInCart = document.querySelector('.incart');
-const cartLabel = document.querySelector('.header_login-cart_styles');
-const chkboxTopping = document.querySelectorAll('.optiontop');
+const btnInCart = document.querySelector('.incart'); // добавить в корзину
+const cartLabel = document.querySelector('.header_login-cart_styles'); //корзина
+const chkboxTopping = document.querySelectorAll('.optiontop'); // чекбокс топпинг
 
 let counter = 0; // счетчик нажатий кнопки "В корзину"
 
