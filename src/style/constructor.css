@@ -73,6 +73,7 @@
     height: 200px;
     display: flex;
     align-items: center;
+    gap: 20px;
     overflow-x: scroll;
 }
 
@@ -84,14 +85,14 @@
     display: none;
 }
 
-.gallery-grid {
+/*.gallery-grid {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: center;   
     gap: 17px;
     flex: none;
-}
+}*/
 
 .scroll-btn {
     width: 15px;
@@ -230,7 +231,7 @@
     padding: 10px;
     background-color: var(--white-color);
     cursor: pointer;
-    width: 112px;
+    min-width: 115px;
     height: 166px;
     border: solid 1px var(--light-grey);
     border-radius: 30px;

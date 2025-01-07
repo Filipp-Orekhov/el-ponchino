@@ -289,10 +289,6 @@ btnSearch.addEventListener('click', (e)=>{
   renderAll(searchText, store)
 })
 
-/*btnBack.addEventListener('click', (e)=>{
-  renderAll('')
-})*/
-
 /*    Class Product    */
 
 class Product {
