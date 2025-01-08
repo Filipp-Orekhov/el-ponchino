@@ -3,8 +3,6 @@ const boxes = document.querySelector('#boxes')
 const donuts = document.querySelector('#donuts')
 const searchField = document.querySelector('.search')
 const btnSearch = document.querySelector('.btn-search')
-const cartCount = document.querySelector('.span-cart') // delete
-const btnCart = document.querySelector('.btn-cart') // delete
 const btnBack = document.querySelector('.btn-back')
 const cartLabel = document.querySelector('.header_login-cart_styles'); //корзина
 let counter = 0; // счетчик нажатий кнопки "В корзину"
@@ -205,8 +203,9 @@ class Card {
   }
 
   render() {
-    const mainWrapper = document.createElement('div')
-    mainWrapper.classList.add('card')
+    const mainWrapper = document.createElement('div');
+    mainWrapper.classList.add('card');
+    mainWrapper.setAttribute('data-url', 'card.html');
     
     const HTML = `                       
       <img class="card_img" src="${this.img}" alt="${this.name}">         
@@ -231,6 +230,7 @@ class Card {
     // добавляем пончик в корзину
     btn.addEventListener('click', (e) => {
       console.log('event', e.target.dataset)
+      e.stopPropagation();
       this.addToCard(this.id, this.name, this.price)
 
     // делаем счетчик товаров в корзине видимым и увеличиваем его
@@ -238,10 +238,26 @@ class Card {
     cartLabel.setAttribute('data-before', ++counter);
     console.log('cartlabel',cartLabel);
     })
+    
+    // переход на страницу карточки товара
+    mainWrapper.addEventListener('click', (e) => {
+      console.log('redirection func')
+      if (e.target.classList.contains('btn')) {
+         // добавляем пончик в корзину
+          e.stopPropagation();
+          return;
+        /*  this.addToCard(this.id, this.name, this.price)
 
-    const itemInCart = cart.find((el) => el.id === this.id)
-      btn.disabled = itemInCart
-      itemInCart && add.classList.add('show')
+          // делаем счетчик товаров в корзине видимым и увеличиваем его
+         cartLabel.classList.remove('hidden'); 
+         cartLabel.setAttribute('data-before', ++counter);
+         console.log('cartlabel',cartLabel);*/
+      }
+        const url = mainWrapper.getAttribute('data-url');
+        if (url) {
+            window.location.href = url; // Redirect to the URL
+        }
+    });
   }
 }
 
@@ -289,6 +305,8 @@ btnSearch.addEventListener('click', (e)=>{
   renderAll(searchText, store)
 })
 
+
+
 /*    Class Product    */
 
 class Product {
@@ -335,17 +353,3 @@ const removeCart = () =>{
     cartList.replaceChildren()
   }
 }
-
-btnCart.addEventListener("click", (e) => { 
-  removeCart()
-  cart.forEach((el) => new Product(el.id, el.name, el.price).render())
-  console.log(cart)
-})
-  
-   /* const btn = mainWrapper.querySelector('.btn')
-    const add = mainWrapper.querySelector('.add')*/
-
-   /* cartList.classList.add("popup--open");
-    /*body.classList.add("lock");*/
-/*}
-}*/
