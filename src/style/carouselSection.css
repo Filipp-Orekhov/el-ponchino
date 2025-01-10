@@ -9,6 +9,12 @@
     position: relative;
 }
 
+.carousel-section-title{
+    font-family: "mulish-regular", sans-serif;
+    font-size: 36px;
+    line-height: 45px;
+}
+
 .carousel-wrapper{
     max-width: 1030px;
     max-height: 325px;

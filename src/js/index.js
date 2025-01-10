@@ -34,25 +34,42 @@ document.addEventListener('DOMContentLoaded', () => {
         headerIcon.addEventListener('click', handleClickHeaderIcons);
     });
 
-    const carousel = document.querySelector(".carousel-wrapper");
     const items = document.querySelectorAll(".carousel-card-wrapper");
     const prevBtn = document.querySelector(".carousel-nav-left");
     const nextBtn = document.querySelector(".carousel-nav-right");
 
     let currentIndex = 0;
+    let itemsToShow = 1;
 
-    function showItem(index) {
-        // Hide all items-Скрыть все элементы
-        items.forEach(item => (item.style.display = "none"));
-
-        // Show the current item-Показать текущий элемент
-        items[index].style.display = "block";
+    function updateItemsToShow() {
+        const width = window.innerWidth;
+        if (width < 600) {
+            itemsToShow = 1; // Мобильная версия
+        } else if (width < 900) {
+            itemsToShow = 2;
+        } else if (width < 1171) {
+            itemsToShow = 3;
+        } else {
+            itemsToShow = 4; // Компьютерная версия
+        }
     }
+
+    function showItem() {
+    items.forEach((item, index) => {
+        if (index >= currentIndex && index < currentIndex + itemsToShow) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+    }
+
 
     function showNextItem() {
         currentIndex = (currentIndex + 1) % items.length;
         showItem(currentIndex);
     }
+
 
     function showPrevItem() {
         currentIndex = (currentIndex - 1 + items.length) % items.length;
@@ -62,17 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener("click", showPrevItem);
     nextBtn.addEventListener("click", showNextItem);
 
-    // Initial display-Начальный дисплей
-        showItem(currentIndex);
+    // Инициализация
+    updateItemsToShow();
+    showItem();
 
-    //
-    // Reset to the first item-Возврат к первому пункту
-    //         currentIndex = 0;
-    //         showItem(currentIndex);
-    //     }catch (error){
-    //         console.error("Error fetching images from Wikipedia:", error);
-    //     }
-    // }
-    //
-    // fetchImages();
+    // Обновляем количество отображаемых карточек при изменении размера окна
+    window.addEventListener('resize', () => {
+        updateItemsToShow(itemsToShow);
+        showItem();
+    });
 });
