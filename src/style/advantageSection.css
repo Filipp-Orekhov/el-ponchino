@@ -22,6 +22,7 @@
 
 .advantage-article-wrapper-adaptive{
     display: flex;
+    justify-content: space-around;
     gap: 80px;
 }
 

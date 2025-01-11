@@ -60,7 +60,7 @@
 .btn-link-construction{
     margin-top: 40px;
     padding: 21px 28px;
-    max-width: 50%;
+    max-width: 300px;
     min-height: 64px;
     border-radius: 28px;
     background-color: var(--pink-color-button);

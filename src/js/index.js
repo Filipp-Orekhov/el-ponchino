@@ -79,6 +79,27 @@ document.addEventListener('DOMContentLoaded', () => {
     prevBtn.addEventListener("click", showPrevItem);
     nextBtn.addEventListener("click", showNextItem);
 
+    let startX = 0;
+    let endX = 0;
+
+    items.forEach((item) => {
+        item.addEventListener('touchstart', (event) => {
+            startX = event.touches[0].clientX;
+        });
+
+        item.addEventListener('touchmove', (event) => {
+            endX = event.touches[0].clientX;
+        });
+
+        item.addEventListener('touchend', () => {
+            if (startX > endX + 50) {
+                showNextItem();
+            } else if (startX < endX - 50) {
+                showPrevItem();
+            }
+        });
+    });
+
     // Инициализация
     updateItemsToShow();
     showItem();
