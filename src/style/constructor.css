@@ -203,6 +203,10 @@
     flex-flow: column nowrap;
 }
 
+.donut-container {
+    width: 43%;
+}
+
 .text-filling {
     max-width: 502px;
     font-size: 16px;

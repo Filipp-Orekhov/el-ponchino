@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/cart.css">
     <title>Меню</title>
 </head>
 <body>  
@@ -50,6 +51,13 @@
                     <path d="M4.5 4.5C4.5 6.981 6.519 9 9 9C11.481 9 13.5 6.981 13.5 4.5C13.5 2.019 11.481 0 9 0C6.519 0 4.5 2.019 4.5 4.5ZM17 19H18V18C18 14.141 14.859 11 11 11H7C3.14 11 0 14.141 0 18V19H17Z" fill="white"/>
                 </svg>
             </a>
+            <div class="cart-popup hidden">
+                <div class="cart-items"></div>
+                <div class="cart-total">
+                    <p>Общая стоимость: <span id="totalPrice">0 руб.</span></p>
+                </div>
+            </div>
+            
         </div>
     </div>
 </header>
@@ -84,7 +92,7 @@
     </div>
     <div class="grid-card">
     </div>
-<main>
+</main>
  <script src="./js/menu.js"></script>    
 </body>
 </html>

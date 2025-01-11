@@ -1,4 +1,3 @@
-/*import { toppingZIndex } from "./main.js";*/
 
 export function toppingHandler(button, glaze, toppings, toppingZIndex) {
     
