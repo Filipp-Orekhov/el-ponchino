@@ -107,60 +107,123 @@
         min-width: 0px;
         max-width: 900px;
     }
+
+    .footer-wrapper{
+        max-width: 580px;
+        margin: 0 auto
+    }
+
+    .general-logo{
+        display: none;
+    }
+
+    .operating-mode_wrapper{
+        align-items: normal;
+    }
+
+    .contacts_wrapper{
+        margin-left: 20px;
+    }
+
 }
 
-@media (max-width: 600px){
+@media (max-width: 600px) {
 
-    .hero-section{
+    .hero-section {
         max-width: 600px;
         min-height: 840px;
     }
 
-    .hero-section::after{
+    .hero-section::after {
         left: 208px;
         top: -471px;
     }
 
-    .hero-content-wrapper{
+    .hero-content-wrapper {
         max-width: 80%;
         display: grid;
         justify-items: center;
     }
 
-    .hero-title{
+    .hero-title {
         text-align: center;
     }
 
-    .hero-text{
+    .hero-text {
         text-align: center;
     }
 
-    .advantage-section-title{
+    .advantage-section-title {
         font-size: 30px;
         line-height: 34px;
     }
 
-    .advantage-article-title{
+    .advantage-article-title {
         font-size: 17px;
         line-height: 18px;
     }
 
-    .advantage-article-text{
+    .advantage-article-text {
         font-size: 11px;
         line-height: 14px;
     }
 
-    .advantage-article{
+    .advantage-article {
         max-width: 185px;
 
     }
-    .news-section{
+
+    .news-section {
         max-width: 600px;
     }
+
     .news-wrapper-content {
         max-width: 90%;
     }
+
+    .footer{
+        margin-top: 100px;
+    }
+
+    .footer-wrapper{
+        max-width: 500px;
+        margin-left: 22px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer_nav{
+        margin-top: 32px;
+    }
+
+    .footer_nav_ul{
+        margin-top: 3px;
+    }
+
+    .contacts_wrapper{
+        margin: 32px 0;
+    }
+
+    .footer_contacts{
+        margin-top: 13px;
+    }
+
+    .operating-mode_wrapper{
+        min-height: 0;
+        margin-left: 0;
+        margin-bottom: 32px;
+        justify-content: center;
+    }
+
+    .operating_span{
+        margin-top: 0;
+    }
+
+    .footer_privacy{
+        margin-top: 32px;
+    }
 }
+
 
 @media (max-width: 460px){
 
