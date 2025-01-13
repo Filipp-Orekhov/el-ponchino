@@ -1,0 +1,127 @@
+:root{
+    --white-color: #FFFFFF;
+    --light-peach-header-color: #fffcf9;
+    --black-color: #000000;
+    --peach-color: #ff9d9b;
+    --choco-color: #76473b;
+    --footer-main-color: #fff3E3;
+    --brown-text-color: #6B4336;
+    --orange-color: #ff7a50;
+ }
+
+.header {
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*padding: 36px 151px 39px 151px;*/
+    background-color: var(--light-peach-header-color);             
+}
+
+.header_wrapper {
+    /*position: relative;*/
+    /*margin: 0 auto;*/
+    width: 1138px;
+    height: 50px;
+    /*margin-top: 36px;*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_logo {
+    /*margin-top: -25px;*/
+    width: 100px;
+    height: 100px;
+    clip-path: circle(50px);
+}
+
+.header_nav_ul {
+    display: flex;
+    gap: 32px;
+}
+
+.opening_hours_wrapper {
+    min-width: 220px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-right: 20px;
+}
+
+.clock {
+    width: 22px;
+    height: 22px;
+    fill: var(--peach-color);
+}
+.opening_hours_span {
+    color: var(--orange-color);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.clock_style {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.header_icons_container {
+    width: 110px;
+    height: 44px;
+    display: flex;
+    gap: 22px;
+}
+
+.header_cart {
+    position: relative;
+}
+
+.header_cart_number {
+    position: absolute;
+    bottom: 34px;
+    left: 26px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    border: 1px solid var(--white-color);
+    background-color: var(--orange-color);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.cart_digit {
+    line-height: 14px;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--white-color);
+}
+
+.header_login-cart_styles {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: var(--peach-color);
+}
+
+.header_login-cart_styles_clicked {
+    transform: scale(0.85);
+    border: 2px solid var(--choco-color);
+    opacity: 0.7;
+}
+
+.header_login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,3 +1,7 @@
+@import url('footer.css');
+@import url('header.css');
+@import url('cart.css');
+
 html {
     box-sizing: border-box;
 }
@@ -51,6 +55,7 @@ body{
     --choco-color: #76473b;
     --footer-main-color: #fff3E3;
     --brown-text-color: #6B4336;
+    --orange-color: #ff7a50;
  }
 
 .btn-styles{
@@ -79,56 +84,7 @@ body{
 
 /* /--------------------------------------------------------------------------------- */
 
-.header {
-    margin: 0 auto;
-    max-width: 1440px;
-    height: 125px;
-    padding: 36px 151px 39px 151px;
-    background-color: var(--light-peach-header-color);             
-    align-items: center;
-}
 
-.header_wrapper {
-    position: relative;
-    height: 50px;
-    margin-top: 36px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.header_logo {
-    width: 80px;
-    height: 80px;
-    clip-path: circle(40px);
-}
-
-.header_nav_ul {
-    display: flex;
-    gap: 32px;
-}
-
-.header_icons_container {
-    width: 110px;
-    height: 44px;
-    display: flex;
-    gap: 22px;
-}
-
-.header_login-cart_styles {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    background-color: var(--peach-color);
-}
-
-.header_login-cart_styles_clicked {
-    transform: scale(0.85);
-    border: 2px solid var(--choco-color);
-    opacity: 0.7;
-}
 
 /* Hero__________________________________________________________________________________________________________ */
 
@@ -166,8 +122,12 @@ body{
     font-weight: 300;
     line-height: 27px;
     white-space: pre-wrap;
+    overflow: hidden;
 }
 
+.about_us_hero_txt_mobile {
+    display: none;
+}
 
 .about_us_hero_picture {
     max-width: 429px;
@@ -177,6 +137,9 @@ body{
     margin-top: 15px;
 }
 
+.about_us_ornament_hero_mobile {
+    display: none;
+}
 
 .about_us_section_our_values {
     height: 401px;
@@ -202,6 +165,10 @@ body{
     font-weight: 400;
     line-height: 25px;
     color: var(--brown-text-color);
+}
+
+.about_us_values_mobile_wrapper {
+    display: none;
 }
 
 .about_us_values_spans_wrapper {
@@ -249,133 +216,3 @@ body{
 
 /* ________________________________________________________________________________________________________Footer */
 
-.footer {
-    margin: 0 auto;
-    max-width: 1440px;
-    height: 301px;
-    padding: 47px 96px 65px 140px;
-    display: flex;
-    column-gap: 131px;
-    color: var(--brown-text-color);
-    background-color: var(--footer-main-color);
-
-}
-
-.footer_logo {
-    width: 80px;
-    height: 80px;
-    margin-top: 60px;
-    clip-path: circle(40px);
-}
-
-.footer_nav {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    align-items: flex-start;
-}
-
-.footer_nav_ul {
-    position: absolute;
-    right: 36px;
-    top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    text-align: left;
-}
-
-.footer_top_txt {
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 20px;
-}
-
-.footer_txt {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-}
-
-.contacts_wrapper {
-    height: 189px;
-    display: flex;
-    flex-direction: column;
-}
-
-.footer_contacts_link {
-    margin-top: 22px;
-    font-size: 14px;
-    line-height: 25px;
-    cursor: pointer;
-}
-
-.footer_mail {
-    display: flex;
-    margin-top: 5px;
-    gap: 11px;
-    align-items: center;
-}
-
-.footer_tel {
-    display: flex;
-    align-items: center;
-    margin-top: 9px;
-    gap: 7px;
-}
-
-.media_icons_container {
-    display: flex;
-    align-items: center;
-    margin-top: 22px;
-    gap: 7px;
-}
-
-.media_links {
-    width: 29px;
-    height: 29px;
-    padding-top: 5px;
-    padding-left: 5px;
-    border-radius: 4px;
-    background-color: var(--peach-color);
-}
-
-.youtube_svg {
-    margin-top: 3px;
-}
-
-.vk_svg {
-    margin-top: 1px;
-    margin-left: 1px;
-}
-
-.instagram_svg {
-    margin-top: 1px;
-    margin-left: 1px;
-}
-
-.operating-mode_wrapper {
-    margin-left: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-.operating_span {
-    margin-top: 25px;
-    display: flex;
-}
-
-.footer_time {
-    margin-left: 2px;
-    color: #e05804;
-}
-
-.footer_privacy {
-    margin-top: 79px;
-}
-
-.footer_personal_data {
-    margin-top: 10px;
-}

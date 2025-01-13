@@ -1,0 +1,57 @@
+@media (max-width: 360px) {
+    .header {
+        margin: 0 auto;
+        padding: 0 22px;
+        min-height: 50px;
+    }
+
+    .header_wrapper {
+        max-width: 100%;
+        min-height: 56px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /*flex-wrap: wrap;*/
+        background-color: var(--light-peach-header-color);           
+    }
+
+    .header_nav .header_nav_ul .opening_hours_wrapper {
+        width: 1px;
+        display: none;
+    }
+
+    .header_nav_ul {
+        display: none;
+    }
+
+    .opening_hours_wrapper {
+        display: none;
+    }
+
+    .header_logo {
+        /*margin: 0 auto 10px;*/
+        width: 46px;
+        height: 46px;
+        clip-path: circle(23px);
+        margin-top: 0;
+    }
+
+    .header_icons_container {
+        width: 80px;
+        height: 28px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .header_login-cart_styles {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        background-color: var(--peach-color);
+    }
+
+   }

@@ -1,0 +1,12 @@
+@import "media_header.css";
+@import "media_footer.css";
+
+@media (max-width: 360px) {
+    .card_ul {
+        display: none;
+    }
+
+    .menu_link_card_mobile {
+        display: block;
+    }
+}

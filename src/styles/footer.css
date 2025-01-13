@@ -1,0 +1,145 @@
+:root{
+    --white-color: #FFFFFF;
+    --light-peach-header-color: #fffcf9;
+    --black-color: #000000;
+    --peach-color: #ff9d9b;
+    --choco-color: #76473b;
+    --footer-main-color: #fff3E3;
+    --brown-text-color: #6B4336;
+    --orange-color: #ff7a50;
+ }
+
+.footer {
+    margin: 0 auto;
+    max-width: 1440px;
+    height: 301px;
+    padding: 47px 96px 65px 140px;
+    display: flex;
+    column-gap: 131px;
+    color: var(--brown-text-color);
+    background-color: var(--footer-main-color);
+
+}
+
+.footer_logo {
+    width: 100px;
+    height: 100px;
+    margin-top: 40px;
+    clip-path: circle(50px);
+}
+
+.footer_nav {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.footer_nav_ul {
+    position: absolute;
+    right: -5px;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.footer_top_txt {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.footer_txt {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.delivery_span {
+    white-space: nowrap;
+}
+
+.contacts_wrapper {
+    height: 189px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_contacts_link {
+    margin-top: 22px;
+    font-size: 14px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.footer_mail {
+    display: flex;
+    margin-top: 5px;
+    gap: 11px;
+    align-items: center;
+}
+
+.footer_tel {
+    display: flex;
+    align-items: center;
+    margin-top: 9px;
+    gap: 7px;
+}
+
+.media_icons_container {
+    display: flex;
+    align-items: center;
+    margin-top: 22px;
+    gap: 7px;
+}
+
+.media_links {
+    width: 29px;
+    height: 29px;
+    padding-top: 5px;
+    padding-left: 5px;
+    border-radius: 4px;
+    background-color: var(--peach-color);
+}
+
+.youtube_svg {
+    margin-top: 3px;
+}
+
+.vk_svg {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.instagram_svg {
+    margin-top: 1px;
+    margin-left: 1px;
+}
+
+.operating-mode_wrapper {
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.operating_span {
+    margin-top: 25px;
+    display: flex;
+}
+
+.footer_time {
+    margin-left: 2px;
+    color: #e05804;
+}
+
+.footer_privacy {
+    margin-top: 60px;
+}
+
+.footer_personal_data {
+    margin-top: 10px;
+}
