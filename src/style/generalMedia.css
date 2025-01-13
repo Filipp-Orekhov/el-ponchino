@@ -9,9 +9,7 @@
     .hero-section::after{
         left: 539px;
         top: -293px
-
     }
-
 
     .wrapper-img-hero-section{
         display: none;
@@ -43,6 +41,7 @@
 
     .news-wrapper-text{
         max-width: 500px;
+        margin-left: 20px;
     }
 }
 
@@ -103,8 +102,12 @@
         display: none;
     }
 
+    .news-wrapper-text{
+        margin: 0 0 20px;
+    }
+
     .news-wrapper-content{
-        min-width: 0px;
+        min-width: 0;
         max-width: 900px;
     }
 
@@ -179,6 +182,10 @@
 
     .news-wrapper-content {
         max-width: 90%;
+    }
+
+    .news-wrapper-text {
+        margin: 0;
     }
 
     .footer{
@@ -437,6 +444,10 @@
             font-size: 14px;
             line-height: 17px;
             text-align: center;
+        }
+
+        .footer{
+            margin-top: 0;
         }
 
     }

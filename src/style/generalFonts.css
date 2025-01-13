@@ -4,8 +4,8 @@
     font-weight: 400;
     
     src: local('Montserrat-Regular'),
-        url("../../fonts/montserrat/Montserrat-Regular.woff") format("woff"),
-        url("../../fonts/montserrat/Montserrat-Regular.woff2") format("woff2");
+        url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff"),
+        url("../fonts/Montserrat/Montserrat-Regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -14,8 +14,8 @@
     font-weight: 500;
 
     src: local('Montserrat-Medium'),
-        url("../../fonts/montserrat/Montserrat-Medium.woff") format("woff"),
-        url("../../fonts/montserrat/Montserrat-Medium.woff2") format("woff2");
+        url("../fonts/Montserrat/Montserrat-Medium.woff") format("woff"),
+        url("../fonts/Montserrat/Montserrat-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -24,8 +24,8 @@
     font-weight: 600;
 
     src: local("Montserrat-SemiBold"),
-        url("../../fonts/montserrat/Montserrat-SemiBold.woff") format("woff"),
-        url("../../fonts/montserrat/Montserrat-SemiBold.woff2") format("woff2");
+        url("../fonts/Montserrat/Montserrat-SemiBold.woff") format("woff"),
+        url("../fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
@@ -34,8 +34,8 @@
     font-weight: 400;
 
     src: local("MontserratAlternates-regular"),
-    url("../../fonts/montserratAlternates/MontserratAlternates-regular.woff") format("woff"),
-    url("../../fonts/montserratAlternates/MontserratAlternates-regular.woff2") format("woff2");
+    url("../fonts/montserratAlternates/MontserratAlternates-regular.woff") format("woff"),
+    url("../fonts/montserratAlternates/MontserratAlternates-regular.woff2") format("woff2");
 }
 
 @font-face {
@@ -44,8 +44,8 @@
     font-weight: 500;
 
     src: local("MontserratAlternates-Medium"),
-        url("../../fonts/montserratAlternates/MontserratAlternates-Medium.woff") format("woff"),
-        url("../../fonts/montserratAlternates/MontserratAlternates-Medium.woff2") format("woff2");
+        url("../fonts/montserratAlternates/MontserratAlternates-Medium.woff") format("woff"),
+        url("../fonts/montserratAlternates/MontserratAlternates-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -64,8 +64,8 @@
     font-weight: 500;
 
     src: local("Roboto-Medium"),
-        url("../../fonts/roboto/Roboto-Medium.woff") format("woff"),
-        url("../../fonts/roboto/Roboto-Medium.woff2") format("woff2");
+        url("../fonts/roboto/Roboto-Medium.woff") format("woff"),
+        url("../fonts/roboto/Roboto-Medium.woff2") format("woff2");
 }
 
 @font-face {
@@ -74,6 +74,6 @@
     font-weight: 400;
 
     src: local("Rubik Doodle Shadow"),
-        url("../../fonts/rubikDoodleShadow/RubikDoodleShadow-Regular.woff") format("woff"),
-        url("../../fonts/rubikDoodleShadow/RubikDoodleShadow-Regular.woff2") format("woff2");
+        url("../fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff") format("woff"),
+        url("../fonts/RubikDoodleShadow/RubikDoodleShadow-Regular.woff2") format("woff2");
 }
