@@ -180,7 +180,7 @@
 
 /* Стили заголовков */
 .header-bg {
-    background-color: var(--light-peach);
+    background-color: var(--peach-circle-background);
 }
 
 .title-constructor-wrapper {
@@ -221,13 +221,13 @@
     margin-top: 30px;
 }
 
-.constuctor-wrapper {   
+.constructor-wrapper {   
     max-width: 1140px;
     display: flex;
     gap: 70px;
     margin: 0 auto; 
     padding-top: 52px;  
-    padding-bottom: 337px;
+    padding-bottom: 70px;
 }
 
 /*Стили кнопок*/ 
@@ -373,9 +373,6 @@
     border-radius: 20px;
 }
 
-.footer-wrapper {
-    width: 1440px;
-    height: 301px;
-    background-color: var(--peach);
-    margin: 0 auto;
+.total-text {
+    display: none;
 }

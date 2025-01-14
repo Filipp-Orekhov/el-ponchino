@@ -263,6 +263,7 @@ class Card {
           }
           const url = mainWrapper.getAttribute('data-url');
           if (url) {
+              localStorage.setItem("selectProductId", this.id);
               window.location.href = url; // Redirect to the URL
           }
       });

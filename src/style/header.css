@@ -16,7 +16,7 @@
 }
 
 .header_wrapper {
-    max-width: 1138px;
+    width: 80%;
     display: flex;
     align-items: center;
 }
@@ -28,7 +28,7 @@
 }
 
 .header_nav{
-    min-width: 580px;
+    width: 580px;
     margin-right: 70px;
 }
 
@@ -124,5 +124,9 @@
 .hidden::after{
   opacity: 0; 
   pointer-events: none; /* Исключает взаимодействие */
+}
+
+.menu_icon{
+    display: none;
 }
 

@@ -11,7 +11,8 @@ html {
 .main-wrapper {
     max-width: 1140px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 70px;
+    padding-bottom: 70px;
 }
 
 /*Стили баннера*/
@@ -52,7 +53,7 @@ html {
 
 .span-promo{
     color: var(--white-color);
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -202,14 +203,6 @@ html {
 .search-svg path{
     fill: var(--grey);
 }
-
-/*.btn-input-wrapper {
-    margin: 0 auto;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
 
 .bg-color {
     padding: 0;

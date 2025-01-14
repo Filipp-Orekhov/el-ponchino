@@ -1,7 +1,27 @@
 let scrollContainerFill = document.querySelector('#filling-buttons');
 let scrollContainerGlaze = document.querySelector('#glaze-buttons');
 let scrollBtn = document.querySelectorAll('.scroll-btn');
-const btndWidth = 135;
+
+// Изначальное значение переменной
+let btndWidth = 135;
+
+// Проверяем медиа-запрос
+const mediaQuery = window.matchMedia("(max-width: 370px)");
+
+// Функция для обработки изменений медиа-запроса
+function handleMediaChange(e) {
+  if (e.matches) {
+    btndWidth = 120;
+  } else {
+    btndWidth = 135;
+  }
+}
+
+// Инициализация
+handleMediaChange(mediaQuery);
+
+// Добавляем слушатель изменений
+mediaQuery.addEventListener('resize', handleMediaChange);
 
 scrollContainerFill.addEventListener('wheel', (e) =>{
     e.preventDefault();
@@ -24,6 +44,7 @@ scrollBtn.forEach(button => {
             }
             else{
                 scrollContainerFill.scrollLeft += btndWidth; 
+                console.log('btndWidth', btndWidth);
             }     
         }
         if (e.target.id === "backBtnFill") {
