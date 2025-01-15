@@ -14,27 +14,29 @@ fetch('./data/data.json')
         if (productData) {
             document.querySelector('.routing_card_url').textContent = productData.name;
             document.querySelector('.card_h2').textContent = productData.name;
-            document.getElementById('productImage').src = productData.img;
-            document.getElementById('productImage').alt = productData.name;
-            document.getElementById('productPrice').textContent = `${productData.price} ₽`;
-            document.getElementById('productKcal').textContent = productData.kcal;
-            document.getElementById('productProteins').textContent = productData.proteins;
-            document.getElementById('productFats').textContent = productData.fats;
-            document.getElementById('productCarbohydrates').textContent = productData.carbohydrates;
-            document.getElementById('productDescription').textContent = productData.description;
-            document.getElementById('productComposition').textContent = productData.composition;
+            document.querySelector('.productImage').src = productData.img;
+            document.querySelector('.productImage').alt = productData.name;
+            document.querySelector('.productPrice').textContent = `${productData.price} ₽`;
+            document.querySelector('.productKcal').textContent = productData.kcal;
+            document.querySelector('.productProteins').textContent = productData.proteins;
+            document.querySelector('.productFats').textContent = productData.fats;
+            document.querySelector('.productCarbohydrates').textContent = productData.carbohydrates;
+            document.querySelector('.productDescription').textContent = productData.description;
+            document.querySelector('.productComposition').textContent = productData.composition;
 
             const productName = document.querySelectorAll('[data-id="product"]');
             productName.forEach((el) => (el.innerHTML = productData.name));
 
             let countProductInCart = 0;
             const cartBtn = document.querySelector('.card_btn_cart');
+            const cartBtnMobile = document.querySelector('.btn_media_cart_card');
 
-            cartBtn.addEventListener('click', () => {
+
+            function handleCartButtonClick (btn) {
                 countProductInCart += 1;
 
                 const countControls = document.createElement('div');
-                cartBtn.replaceWith(countControls);
+                btn.replaceWith(countControls);
                 countControls.classList.add('count_controls');
                 countControls.innerHTML = `
             <div class="count_controls">
@@ -54,7 +56,7 @@ fetch('./data/data.json')
                         cart.updateCount(productId, countProductInCart);
                     } else if (countProductInCart <= 1) {
                         countProductInCart -= 1;
-                        countControls.replaceWith(cartBtn);
+                        countControls.replaceWith(btn);
                         cart.removeItem(productId);
                     }
                 });
@@ -82,11 +84,77 @@ fetch('./data/data.json')
                 });
 
                 cart.addItem(productId, countProductInCart);
-            });
+
+            }
+
+            if (cartBtn) {
+                cartBtn.addEventListener('click',() => handleCartButtonClick(cartBtn));
+            }
+
+            if (cartBtnMobile) {
+                cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
+            }
         } else {
             window.location.href = 'menu.html';
         }
+
+        const energyBtnMedia = document.querySelector('.energy_btn_media');
+        const energyValueWrapperMedia = document.createElement('div');
+        energyBtnMedia.addEventListener('click', () => {
+            energyBtnMedia.replaceWith(energyValueWrapperMedia);
+            energyValueWrapperMedia.classList.add('media_card_container_energy');
+            energyValueWrapperMedia.innerHTML = `
+                <div class="media_card_return">
+                    <span class="btn ">КБЖУ на 1 порцию</span> 
+                    <button class="btn-reset hide_energy_media">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71114 7.157L13.3681 1.5L11.9541 0.0859985L7.00414 5.036L2.05414 0.0859985L0.640137 1.5L6.29714 7.157C6.48467 7.34447 6.73897 7.44979 7.00414 7.44979C7.2693 7.44979 7.52361 7.34447 7.71114 7.157Z" fill="#6F6F6F"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="energy_value_wrapper_media">
+                      <div class="kcal_wrapper energy_wrappers">
+                          <span class="energy_spans">Ккал</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productKcal">${productData.kcal}</span>
+                          </div>
+                      </div>
+                      <div class="proteins_wrapper energy_wrappers">
+                          <span class="energy_spans">Белки</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productProteins">${productData.proteins}</span>
+                          </div>
+                      </div>
+                      <div class="fats_wrapper energy_wrappers">
+                          <span class="energy_spans">Жиры</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productFats">${productData.fats}</span>
+                          </div>
+                      </div>
+                      <div class="carbohydrates_wrapper energy_wrappers">
+                          <span class="energy_spans">Углеводы</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productCarbohydrates">${productData.carbohydrates}</span>
+                          </div>
+                      </div>
+                </div>
+            `;
+            const hideEnergyMedia = energyValueWrapperMedia.querySelector('.hide_energy_media');
+
+            hideEnergyMedia.addEventListener('click', () => {
+                energyValueWrapperMedia.replaceWith(energyBtnMedia);
+            })
+        })
     });
+
+const linkMenus = document.querySelectorAll('.linkMenu');
+linkMenus.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.location.href = 'menu.html';
+    });
+});
+
 
 
 

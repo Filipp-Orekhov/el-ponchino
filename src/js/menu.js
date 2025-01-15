@@ -8,7 +8,7 @@ fetch('./data/data.json')
                 <h3>${product.name}</h3>
                 <p>${product.description}</p>
                 <p>${product.price} ₽</p>
-                <a href="card.html" class="buy-button" data-id="${product.id}">Купить</a>
+                <a href="donut_card.html" class="buy-button" data-id="${product.id}">Купить</a>
             </div>
         `).join('');
 

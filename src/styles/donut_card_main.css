@@ -48,7 +48,7 @@ body{
     background-color: transparent;
     cursor: pointer;
 }
- :root{
+:root{
     --white-color: #FFFFFF;
     --light-peach-header-color: #fffcf9;
     --black-color: #000000;
@@ -61,7 +61,8 @@ body{
     --grey-color: #8fbfbf;
     --dark-grey-color: #4f4f4f;
     --border-card-btn-wrapper-color: #949494;
- }
+    --red-text-hero-title: #BE0D15;
+}
 
 .btn-styles{
     text-align: center;
@@ -135,9 +136,8 @@ body{
 .main_card_flex_wrapper {
     height: 397px;
     display: flex;
-    /* gap: 127px; */
     justify-content: space-between;
-   }
+}
 
 .card_donut_picture {
     max-width: 405px;
@@ -194,7 +194,7 @@ body{
 
 .card_btn_cart:hover {
     background-color: var(--grey-color);
-    border: 0px;
+    border: 0;
 }
 
 .count_controls {
@@ -232,6 +232,10 @@ body{
     gap: 25px;
 }
 
+.energy_value_wrapper_media {
+    display: none;
+}
+
 .energy_wrappers {
     width: 82px;
     height: 132px;
@@ -252,6 +256,10 @@ body{
     justify-content: center;
     border-radius: 50%;
     background-color: var(--white-color);
+}
+
+.energy_btn_media {
+    display: none;
 }
 
 .kcal_wrapper {
@@ -300,4 +308,12 @@ body{
 
 .card_composition_txt {
     margin-top: 8px;
+}
+
+.sum_wrapper_media_card {
+    display: none;
+}
+
+.btn_media_cart_card {
+    display: none;
 }
