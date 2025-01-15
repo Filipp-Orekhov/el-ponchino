@@ -228,6 +228,20 @@ fetch('./data/data.json')
 
         const cardListAdded = [];
         cardListAdded.join(cart.loadCart());
-    })
+    });
+
+const linkMenus = document.querySelectorAll('.links_dinamic');
+
+linkMenus.forEach(link => {
+    link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const targetUrl = link.getAttribute('data-url');
+
+        if (targetUrl) {
+            window.location.href = targetUrl;
+        }
+    });
+});
+
 
 

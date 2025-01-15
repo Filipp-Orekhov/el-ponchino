@@ -1,5 +1,5 @@
 import Cart from "./Cart.js";
-const productId = localStorage.getItem('selectedProductId');
+const productId = localStorage.getItem('selectProductId');
 
 
 
@@ -95,7 +95,7 @@ fetch('./data/data.json')
                 cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
             }
         } else {
-            window.location.href = 'menu.html';
+            window.location.href = 'index1.html';
         }
 
         const energyBtnMedia = document.querySelector('.energy_btn_media');
@@ -146,15 +146,6 @@ fetch('./data/data.json')
             })
         })
     });
-
-const linkMenus = document.querySelectorAll('.linkMenu');
-linkMenus.forEach(link => {
-    link.addEventListener('click', (event) => {
-        event.preventDefault();
-        window.location.href = 'menu.html';
-    });
-});
-
 
 
 
