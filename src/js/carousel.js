@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const headerNavLinks = document.querySelectorAll('.link_style');
-    
+
 
     const handleClickHeaderNavLinks = (event) => {
         event.preventDefault();
@@ -55,14 +55,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showItem() {
-    items.forEach((item, index) => {
-        if (index >= currentIndex && index < currentIndex + itemsToShow) {
+        items.forEach((item) => {
+            item.style.display ="none";
+        })
+        items.forEach((item, index) => {
+            if (index === currentIndex) {
+                item.style.display = "block";
+                console.log('if', index, items.length);
+                let countOfItem = 1
+                while (countOfItem <itemsToShow)
+                {
+                    if (index+1<=items.length-1)
+                    { items[index+1].style.display = "block";}
+                    else {items[index+1-items.length].style.display = "block";}
+                    index++;
+                    countOfItem++;
+                    console.log('while','index++', index, 'count++', countOfItem);
+                }
+            }
+        });
+    }
+
+    /*    if (index >= currentIndex && index < currentIndex + itemsToShow) {
             item.style.display = "block";
         } else {
             item.style.display = "none";
         }
     });
-    }
+    }*/
 
 
     function showNextItem() {
