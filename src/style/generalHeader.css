@@ -52,6 +52,7 @@
     font-family: "Montserrat-Regular", sans-serif;
     font-size: 18px;
     line-height: 22px;
+    cursor: pointer;
 }
 
 .clock {
