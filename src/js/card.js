@@ -1,9 +1,6 @@
 import Cart from "./Cart.js";
 const productId = localStorage.getItem('selectProductId');
 
-
-
-
 fetch('./data/data.json')
     .then(response => response.json())
     .then(data => {
@@ -31,7 +28,6 @@ fetch('./data/data.json')
             const cartBtn = document.querySelector('.card_btn_cart');
             const cartBtnMobile = document.querySelector('.btn_media_cart_card');
 
-
             function handleCartButtonClick (btn) {
                 countProductInCart += 1;
 
@@ -39,11 +35,11 @@ fetch('./data/data.json')
                 btn.replaceWith(countControls);
                 countControls.classList.add('count_controls');
                 countControls.innerHTML = `
-            <div class="count_controls">
-                <button class="btn-reset cart_count_change_btns minus_button">-</button>
-                <span class="cart_number">${countProductInCart}</span>
-                <button class="btn-reset cart_count_change_btns plus_button">+</button>
-            </div>`;
+                    <div class="count_controls">
+                        <button class="btn-reset cart_count_change_btns minus_button">-</button>
+                        <span class="cart_number">${countProductInCart}</span>
+                        <button class="btn-reset cart_count_change_btns plus_button">+</button>
+                    </div>`;
 
                 const minusBtn = countControls.querySelector('.minus_button');
                 const plusBtn = countControls.querySelector('.plus_button');
