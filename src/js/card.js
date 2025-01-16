@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
                 }
 
-                // Инициализируем начальное состояние метки корзины
+                // Инициализируем начальное состояние метки корзины!
                 updateCartLabel();
             } else {
                 window.location.href = 'index1.html';
