@@ -230,7 +230,7 @@ class Card {
     mainWrapper.classList.add('card');
     mainWrapper.setAttribute('data-url', 'card.html');
 
-    const HTML = `                       
+    const test = `                       
       <img class="card_img" src="${this.img}" alt="${this.name}">         
       <div class="card_info">             
         <h2 class="card_name">${this.name}</h2>             
@@ -243,7 +243,7 @@ class Card {
         </button>                   
       </div> 
     `;
-    mainWrapper.innerHTML = HTML;
+    mainWrapper.innerHTML = test;
     mainGrid.append(mainWrapper);
 
     const btn = mainWrapper.querySelector('.btn');
