@@ -169,7 +169,7 @@
   },
   {
     "id": "33",
-    "img": "../images/data/white_coconut.png",
+    "img": "./../images/data/white_coconut.png",
     "name": "Белый шоколад",
     "description": "воздушное тесто, карамельная начинка, глазурь белый шоколад, посыпка кокос",
     "price": 189,
