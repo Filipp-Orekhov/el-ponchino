@@ -202,6 +202,7 @@ class Card {
         item.price += price;
         item.amount++;
         itemInCart = true;
+          console.log(item)
       }
     });
 
@@ -230,7 +231,7 @@ class Card {
     mainWrapper.classList.add('card');
     mainWrapper.setAttribute('data-url', 'card.html');
 
-    const test = `                       
+    const HTML = `                       
       <img class="card_img" src="${this.img}" alt="${this.name}">         
       <div class="card_info">             
         <h2 class="card_name">${this.name}</h2>             
@@ -243,7 +244,7 @@ class Card {
         </button>                   
       </div> 
     `;
-    mainWrapper.innerHTML = test;
+    mainWrapper.innerHTML = HTML;
     mainGrid.append(mainWrapper);
 
     const btn = mainWrapper.querySelector('.btn');
