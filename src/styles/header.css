@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--light-peach-header-color);
+    background-color: var(--peach-circle-background);
 }
 
 .header_wrapper {
