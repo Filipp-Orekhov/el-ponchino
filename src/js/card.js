@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Получаем метку корзины
+
     const cartLabel = document.querySelector('.cart_digit');
     if (!cartLabel) {
         console.error('Элемент .cart_digit не найден в DOM!');
@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
     let productData = null;
 
-    // Счетчик количества товаров в корзине
     let counter = cartList.reduce((sum, item) => sum + item.amount, 0);
 
-    // Функция для сохранения корзины в localStorage
     function saveCart() {
         localStorage.setItem("cartList", JSON.stringify(cartList));
     }
@@ -25,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Обновлено количество товаров в корзине: ${counter}`);
     }
 
-    // Функция для обновления метки корзины
     function updateCartLabel() {
         const cartCount = localStorage.getItem('cartCount') || '0';
         // Прямое обновление текста элемента
@@ -112,9 +109,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch('./data/data.json')
         .then(response => response.json())
-        .then((data) => {
-            console.log(data);
-         })
         .then(data => {
             productData = data.find(product => product.id === productId);
 
