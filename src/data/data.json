@@ -1,7 +1,7 @@
 [
   {
     "id": "11",
-    "img": "./images/data/Xmas_box1.png",
+    "img": "../images/data/Xmas_box1.png",
     "name": "Новогодний набор 1",
     "description": "воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка конфети",
     "price": 1700,
@@ -13,7 +13,7 @@
   },
   {
     "id": "12",
-    "img": "./images/data/Xmas_box2.png",
+    "img": "../images/data/Xmas_box2.png",
     "name": "Новогодний набор 2",
     "description": "воздушное тесто, карамельная начинка, разноцветная глазурь, посыпка снег",
     "price": 1700,
@@ -25,7 +25,7 @@
   },
   {
     "id": "13",
-    "img": "./images/data/box2.png",
+    "img": "../images/data/box2.png",
     "name": "Фруктовый микс",
     "description": "воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка кокос",
     "price": 1700,
@@ -37,7 +37,7 @@
   },
   {
     "id": "14",
-    "img": "./images/data/box1.png",
+    "img": "../images/data/box1.png",
     "name": "Шоколадный набор 1",
     "description": "воздушное тесто,  карамельная и фруктовая начинка, глазурь  - молочный и белый шоколад, посыпка орех",
     "price": 1700,
@@ -49,7 +49,7 @@
   },
   {
     "id": "15",
-    "img": "./images/data/box3.png",
+    "img": "../images/data/box3.png",
     "name": "Шоколадный набор 2",
     "description": "воздушное тесто, карамельная и шоколадная начинка, глаузурь  - молочный и темный шоколад, посыпка орех",
     "price": 1700,
@@ -61,7 +61,7 @@
   },
   {
     "id": "21",
-    "img": "./images/data/xmas1.png",
+    "img": "../images/data/xmas1.png",
     "name": "Елочка",
     "description": "воздушное тесто, карамельная начинка,разноцветная глазурь",
     "price": 189,
@@ -73,7 +73,7 @@
   },
   {
     "id": "23",
-    "img": "./images/data/orange_donut.png",
+    "img": "../images/data/orange_donut.png",
     "name": "Апельсиновый",
     "description": "воздушное тесто, карамельная начинка, апельсиновая глазурь, посыпка конфети",
     "price": 189,
@@ -85,7 +85,7 @@
   },
   {
     "id": "24",
-    "img": "./images/data/nuts.png",
+    "img": "../images/data/nuts.png",
     "name": "Молочный шоколад",
     "description": "воздушное тесто, карамельная начинка, глазурь молочный шоколад, посыпка орех",
     "price": 189,
@@ -97,7 +97,7 @@
   },
   {
     "id": "25",
-    "img": "./images/data/strawberry_nuts.png",
+    "img": "../images/data/strawberry_nuts.png",
     "name": "Клубничный",
     "description": "воздушное тесто, клубничная начинка, клубничная глазурь, посыпка орех",
     "price": 189,
@@ -109,7 +109,7 @@
   },
   {
     "id": "26",
-    "img": "./images/data/lemon.png",
+    "img": "../images/data/lemon.png",
     "name": "Лимон",
     "description": "воздушное тесто, лимонная начинка, лимонная глазурь, посыпка конфети",
     "price": 189,
@@ -121,7 +121,7 @@
   },
   {
     "id": "27",
-    "img": "./images/data/caramel_cho.png",
+    "img": "../images/data/caramel_cho.png",
     "name": "Карамельный",
     "description": "воздушное тесто, карамельная начинка, карамельная глазурь, посыпка шоколадная крошка",
     "price": 189,
@@ -133,7 +133,7 @@
   },
   {
     "id": "28",
-    "img": "./images/data/cho_cho.png",
+    "img": "../images/data/cho_cho.png",
     "name": "Темный шоколад",
     "description": "воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка конфетти",
     "price": 189,
@@ -145,7 +145,7 @@
   },
   {
     "id": "31",
-    "img": "./images/data/nutscho.png",
+    "img": "../images/data/nutscho.png",
     "name": "Карамельно-шоколадный",
     "description": "воздушное тесто, карамельная начинка, шоколадная глазурь, посыпка шоколадная крошка",
     "price": 189,
@@ -157,7 +157,7 @@
   },
   {
     "id": "32",
-    "img": "./images/data/strawberry_nuts.png",
+    "img": "../images/data/strawberry_nuts.png",
     "name": "Вишневый",
     "description": "воздушное тесто, вишневая начинка, вишневая глазурь, посыпка шоколадная крошка",
     "price": 189,
@@ -169,7 +169,7 @@
   },
   {
     "id": "33",
-    "img": "./images/data/white_coconut.png",
+    "img": "../images/data/white_coconut.png",
     "name": "Белый шоколад",
     "description": "воздушное тесто, карамельная начинка, глазурь белый шоколад, посыпка кокос",
     "price": 189,
@@ -181,7 +181,7 @@
   },
   {
     "id": "34",
-    "img": "./images/data/choco.png",
+    "img": "../images/data/choco.png",
     "name": "Брауни",
     "description": "воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка конфети",
     "price": 189,
@@ -193,7 +193,7 @@
   },
   {
     "id": "35",
-    "img": "./images/data/choco.png",
+    "img": "../../images/data/choco.png",
     "name": "Ванильный пончик",
     "description": "воздушное тесто, ванильная начинка, белая глазурь, цветная посыпка",
     "price": 199,
@@ -205,7 +205,7 @@
   },
   {
     "id": "36",
-    "img": "./images/data/vanil.png",
+    "img": "images/data/vanil.png",
     "name": "Жемчужный светлый",
     "description": "воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка жемчужины",
     "price": 189,
@@ -217,7 +217,7 @@
   },
   {
     "id": "37",
-    "img": "./images/data/cho_sphere.png",
+    "img": "../../images/data/cho_sphere.png",
     "name": "Жемчужный темный",
     "description": "воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка жемчужины",
     "price": 189,
@@ -229,7 +229,7 @@
   },
   {
     "id": "38",
-    "img": "./images/data/white.png",
+    "img": "../../images/data/white.png",
     "name": "Конфети",
     "description": "воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка жемчужины",
     "price": 189,
