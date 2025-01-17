@@ -175,14 +175,17 @@ function updateCartPopup() {
 
         const decrementBtn = document.createElement('button');
         decrementBtn.textContent = '-';
+        decrementBtn.classList.add('cart-amount-button');
         decrementBtn.addEventListener('click', () => changeAmount(item, -1));
 
         const amountInput = document.createElement('input');
         amountInput.value = item.amount;
+        amountInput.classList.add('cart-amount-input')
         amountInput.disabled = true;
 
         const incrementBtn = document.createElement('button');
         incrementBtn.textContent = '+';
+        incrementBtn.classList.add('cart-amount-button');
         incrementBtn.addEventListener('click', () => changeAmount(item, 1));
 
         amountContainer.appendChild(decrementBtn);

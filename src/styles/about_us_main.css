@@ -47,7 +47,9 @@ body{
     background-color: transparent;
     cursor: pointer;
 }
- :root{
+
+:root{
+    --peach-circle-background: #FFF3E3;
     --white-color: #FFFFFF;
     --light-peach-header-color: #fffcf9;
     --black-color: #000000;
