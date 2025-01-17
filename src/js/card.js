@@ -110,8 +110,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    fetch('../data/data.json')
+    fetch('./data/data.json')
         .then(response => response.json())
+        .then((data) => {
+            console.log(data);
+         })
         .then(data => {
             productData = data.find(product => product.id === productId);
 
@@ -139,10 +142,58 @@ document.addEventListener('DOMContentLoaded', () => {
                     cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
                 }
 
-                // Инициализируем начальное состояние метки корзины!
+
                 updateCartLabel();
             } else {
                 window.location.href = 'index1.html';
             }
         });
+
+    const energyBtnMedia = document.querySelector('.energy_btn_media');
+    const energyValueWrapperMedia = document.createElement('div');
+    energyBtnMedia.addEventListener('click', () => {
+        energyBtnMedia.replaceWith(energyValueWrapperMedia);
+        energyValueWrapperMedia.classList.add('media_card_container_energy');
+        energyValueWrapperMedia.innerHTML = `
+                <div class="media_card_return">
+                    <span class="btn ">КБЖУ на 1 порцию</span> 
+                    <button class="btn-reset hide_energy_media">
+                        <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.71114 7.157L13.3681 1.5L11.9541 0.0859985L7.00414 5.036L2.05414 0.0859985L0.640137 1.5L6.29714 7.157C6.48467 7.34447 6.73897 7.44979 7.00414 7.44979C7.2693 7.44979 7.52361 7.34447 7.71114 7.157Z" fill="#6F6F6F"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="energy_value_wrapper_media">
+                      <div class="kcal_wrapper energy_wrappers">
+                          <span class="energy_spans">Ккал</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productKcal">${productData.kcal}</span>
+                          </div>
+                      </div>
+                      <div class="proteins_wrapper energy_wrappers">
+                          <span class="energy_spans">Белки</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productProteins">${productData.proteins}</span>
+                          </div>
+                      </div>
+                      <div class="fats_wrapper energy_wrappers">
+                          <span class="energy_spans">Жиры</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productFats">${productData.fats}</span>
+                          </div>
+                      </div>
+                      <div class="carbohydrates_wrapper energy_wrappers">
+                          <span class="energy_spans">Углеводы</span>
+                          <div class="numbers_wrappers_energy">
+                              <span class="kcal_count productCarbohydrates">${productData.carbohydrates}</span>
+                          </div>
+                      </div>
+                </div>
+            `;
+        const hideEnergyMedia = energyValueWrapperMedia.querySelector('.hide_energy_media');
+
+        hideEnergyMedia.addEventListener('click', () => {
+            energyValueWrapperMedia.replaceWith(energyBtnMedia);
+        })
+    })
 });
