@@ -1,7 +1,7 @@
 import Cart from "./Cart.js";
 const productId = localStorage.getItem('selectProductId');
 
-fetch('../src/data/data.json')
+fetch('/el-ponchino/src/data/data.json')
     .then(response => response.json())
 
     .then(data => {

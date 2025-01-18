@@ -10,7 +10,7 @@ const totalPriceElem = document.querySelector('#totalPrice'); // Элемент 
 const store = [
   {
     id:'11',
-    img: './../images/boxes/Xmas_box1.png',
+    img: './../../images/boxes/Xmas_box1.png',
     name: 'Новогодний набор 1',
     description:'воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка конфети',
     price: 1700
