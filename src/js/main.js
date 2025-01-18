@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fillingButtons.forEach(button => {
         button.addEventListener('click', () => { 
             filling = setOption(fillingButtons, button, filling);
-            document.getElementById('filling-layer').src = `../../images/filling/${filling.image}`;
+            document.getElementById('filling-layer').src = `${filling.image}`;
             
             // Обновляем итоговую информацию о КБЖУ и стоимости
             updateSummary(filling, glaze, toppings);  
