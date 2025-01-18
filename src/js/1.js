@@ -10,7 +10,7 @@ const totalPriceElem = document.querySelector('#totalPrice'); // Элемент 
 const store = [
   {
     id:'11',
-    img: '../../images/boxes/Xmas_box1.png',
+    img: 'src/images/boxes/Xmas_box1.png',
     name: 'Новогодний набор 1',
     description:'воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка конфети',
     price: 1700
@@ -18,7 +18,7 @@ const store = [
 
   {
     id:'12',
-    img:  '../../images/boxes/Xmas_box2.png',
+    img:  'src/images/boxes/Xmas_box2.png',
     name: 'Новогодний набор 2',
     description:'воздушное тесто, карамельная начинка, разноцветная глазурь, посыпка снег',
     price: 1700
@@ -26,7 +26,7 @@ const store = [
 
   {
     id:'13',
-    img:  '../../images/boxes/box2.png',
+    img:  'src/images/boxes/box2.png',
     name: 'Фруктовый микс',
     description:'воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка кокос',
     price: 1700
@@ -34,7 +34,7 @@ const store = [
 
   {
     id:'14',
-    img:  '../../images/boxes/box1.png',
+    img:  'src/images/boxes/box1.png',
     name: 'Шоколадный набор 1',
     description:'воздушное тесто,  карамельная и фруктовая начинка, глаузурь  - молочный и белый шоколад, посыпка орех',
     price: 1700
@@ -42,7 +42,7 @@ const store = [
 
   {
     id:'15',
-    img:  '../../images/boxes/box3.png',
+    img:  'src/images/boxes/box3.png',
     name: 'Шоколадный набор 2',
     description:'воздушное тесто, карамельная и шоколадная начинка, глаузурь  - молочный и темный шоколад, посыпка орех',
     price: 1700
@@ -50,112 +50,112 @@ const store = [
 
   {
     id:'21',
-    img:  '../../images/menu_donuts/xmas1.png',
+    img:  'src/images/menu_donuts/xmas1.png',
     name: 'Елочка',
     description:'воздушное тесто, карамельная начинка,разноцветная глазурь',
     price: 189
   },
   {
     id:'22',
-    img:  '../../images/menu_donuts/zmas2.png',
+    img:  'src/images/menu_donuts/zmas2.png',
     name: 'Еловый шар',
     description:'воздушное тесто, карамельная начинка,  разноцветная глазурь',
     price: 189
   },
   {
     id:'23',
-    img:  '../../images/menu_donuts/orange_donut.png',
+    img:  'src/images/menu_donuts/orange_donut.png',
     name: 'Апельсиновый',
     description:'воздушное тесто, карамельная начинка, апельсиновая глазурь, посыпка конфети',
     price: 189
   },
   {
     id:'24',
-    img:  '../../images/menu_donuts/nuts.png',
+    img:  'src/images/menu_donuts/nuts.png',
     name: 'Молочный шоколад',
     description:'воздушное тесто, карамельная начинка, глазурь молочный шоколад, посыпка орех',
     price: 189
   },
   {
     id:'25',
-    img:  '../../images/menu_donuts/Strawberry_nuts.png',
+    img:  'src/images/menu_donuts/Strawberry_nuts.png',
     name: 'Клубничный',
     description:'воздушное тесто, клубничная начинка, клубничная глазурь, посыпка орех',
     price: 189
   },
   {
     id:'26',
-    img:  '../../images/menu_donuts/lemon.png',
+    img:  'src/images/menu_donuts/lemon.png',
     name: 'Лимон',
     description:'воздушное тесто, лимонная начинка, лимонная глазурь, посыпка конфети',
     price: 189
   },
   {
     id:'27',
-    img:  '../../images/menu_donuts/caramel_cho.png',
+    img:  'src/images/menu_donuts/caramel_cho.png',
     name: 'Карамельный',
     description:'воздушное тесто, карамельная начинка, карамельная глазурь, посыпка шоколадная крошка',
     price: 189
   },
   {
     id:'28',
-    img:  '../../images/menu_donuts/cho_cho.png',
+    img:  'src/images/menu_donuts/cho_cho.png',
     name: 'Темный шоколад',
     description:'воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка конфетти',
     price: 189
   },
   {
     id:'31',
-    img:  '../../images/menu_donuts/nutscho.png', 
+    img:  'src/images/menu_donuts/nutscho.png',
     name: 'Карамельно-шоколадный',
     description:'воздушное тесто, карамельная начинка, шоколадная глазурь, посыпка шоколадная крошка',
     price: 189
   },
   {
     id:'32',
-    img:  '../../images/menu_donuts/Strawberry_choc.png',
+    img:  'src/images/menu_donuts/Strawberry_choc.png',
     name: 'Вишневый',
     description:'воздушное тесто, вишневая начинка, вишневая глазурь, посыпка шоколадная крошка',
     price: 189
   },
   {
     id:'33',
-    img:  '../../images/menu_donuts/white_coconut.png',
+    img:  'src/images/menu_donuts/white_coconut.png',
     name: 'Белый шоколад',
     description:'воздушное тесто, карамельная начинка, глазурь белый шоколад, посыпка кокос',
     price: 189
   },
   {
     id:'34',
-    img:  '../../images/menu_donuts/choco.png',
+    img:  'src/images/menu_donuts/choco.png',
     name: 'Брауни',
     description:'воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка конфети',
     price: 189
   },
   {
     id:'35',
-    img:  '../../images/menu_donuts/strawberry.png',
+    img:  'src/images/menu_donuts/strawberry.png',
     name: 'Малиновый',
     description:'воздушное тесто, малиновая начинка, малиновая глазурь, посыпка кокос',
     price: 189
   },
   {
     id:'36',
-    img:  '../../images/menu_donuts/vanil.png',
+    img:  'src/images/menu_donuts/vanil.png',
     name: 'Жемчужный светлый',
     description:'воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка жемчужины',
     price: 189
   },
   {
     id:'37',
-    img:  '../../images/menu_donuts/cho_sphere.png',
+    img:  'src/images/menu_donuts/cho_sphere.png',
     name: 'Жемчужный темный',
     description:'воздушное тесто, шоколадная начинка, шоколадная глазурь, посыпка жемчужины',
     price: 189
   },
   {
     id:'38',
-    img:  '../../images/menu_donuts/white.png',
+    img:  'src/images/menu_donuts/white.png',
     name: 'Конфети',
     description:'воздушное тесто, шоколадная начинка, глазурь белый шоколад, посыпка конфетти',
     price: 189
