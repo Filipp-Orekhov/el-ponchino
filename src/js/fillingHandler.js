@@ -24,6 +24,6 @@ export function setGlaze(glaze) {
         glazeLayer.id = 'glaze-layer';
         document.getElementById('donut-frame').appendChild(glazeLayer);
     }
-    glazeLayer.src = `../../images/glaze/${glaze.image}`;
+    glazeLayer.src = `${glaze.image}`;
     glazeLayer.style.zIndex = 2; // Устанавливаем z-index для глазури
 }
