@@ -1,154 +1,114 @@
-document.addEventListener('DOMContentLoaded', () => {
+import Cart from "./Cart.js";
+const productId = localStorage.getItem('selectProductId');
 
-    const cartLabel = document.querySelector('.cart_digit');
-    if (!cartLabel) {
-        console.error('Элемент .cart_digit не найден в DOM!');
-        return;
-    }
+fetch('../src/data/data.json')
+    .then(response => response.json())
+    .then(data => {
+        const productData = data.find(product => product.id === productId);
 
-    const productId = localStorage.getItem('selectProductId');
-    let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
-    let productData = null;
+        const cart = new Cart(productData);
 
-    let counter = cartList.reduce((sum, item) => sum + item.amount, 0);
+        if (productData) {
+            document.querySelector('.routing_card_url').textContent = productData.name;
+            document.querySelector('.card_h2').textContent = productData.name;
+            document.querySelector('.productImage').src = productData.img;
+            document.querySelector('.productImage').alt = productData.name;
+            document.querySelector('.productPrice').textContent = `${productData.price} ₽`;
+            document.querySelector('.productKcal').textContent = productData.kcal;
+            document.querySelector('.productProteins').textContent = productData.proteins;
+            document.querySelector('.productFats').textContent = productData.fats;
+            document.querySelector('.productCarbohydrates').textContent = productData.carbohydrates;
+            document.querySelector('.productDescription').textContent = productData.description;
+            document.querySelector('.productComposition').textContent = productData.composition;
 
-    function saveCart() {
-        localStorage.setItem("cartList", JSON.stringify(cartList));
-    }
+            const productName = document.querySelectorAll('[data-id="product"]');
+            productName.forEach((el) => (el.innerHTML = productData.name));
 
-    // Функция для обновления cartCount в localStorage
-    function updateCartCount() {
-        counter = cartList.reduce((sum, item) => sum + item.amount, 0);
-        localStorage.setItem('cartCount', counter.toString());
-        console.log(`Обновлено количество товаров в корзине: ${counter}`);
-    }
+            let countProductInCart = 0;
+            const cartBtn = document.querySelector('.card_btn_cart');
+            const cartBtnMobile = document.querySelector('.btn_media_cart_card');
 
-    function updateCartLabel() {
-        const cartCount = localStorage.getItem('cartCount') || '0';
-        // Прямое обновление текста элемента
-        if (parseInt(cartCount) > 0) {
-            cartLabel.classList.remove('hidden');
-            cartLabel.textContent = cartCount;  // Обновляем текст, а не атрибут
-            console.log(`Метка корзины обновлена, новое количество товаров: ${cartCount}`);
-        } else {
-            cartLabel.classList.add('hidden');
-            console.log('Метка корзины скрыта (количество равно 0).');
-        }
-    }
+            function handleCartButtonClick (btn) {
+                countProductInCart += 1;
+                let cartCount = parseInt(localStorage.getItem('cartCount')) || 0;
+                cartCount += countProductInCart;
+                localStorage.setItem('cartCount', cartCount);
 
+                const countControls = document.createElement('div');
+                btn.replaceWith(countControls);
+                countControls.classList.add('count_controls');
+                countControls.innerHTML = `
+                    <div class="count_controls">
+                        <button class="btn-reset cart_count_change_btns minus_button">-</button>
+                        <span class="cart_number">${countProductInCart}</span>
+                        <button class="btn-reset cart_count_change_btns plus_button">+</button>
+                    </div>`;
 
-    function handleCartButtonClick(btn) {
-        if (!productData) {
-            console.error("Данные о товаре не загружены");
-            return;
-        }
+                const minusBtn = countControls.querySelector('.minus_button');
+                const plusBtn = countControls.querySelector('.plus_button');
+                const countProductRender = countControls.querySelector('.cart_number');
 
-        const existingProduct = cartList.find(item => item.id === productId);
+                minusBtn.addEventListener('click', () => {
+                    if (countProductInCart > 1) {
+                        countProductInCart -= 1;
+                        countProductRender.textContent = countProductInCart;
+                        cartCount -= 1;
+                        localStorage.setItem('cartCount', cartCount);
+                        cart.updateCount(productId, countProductInCart);
+                    } else if (countProductInCart <= 1) {
+                        countProductInCart -= 1;
+                        cartCount -= 1;
+                        localStorage.setItem('cartCount', cartCount);
+                        countControls.replaceWith(btn);
+                        cart.removeItem(productId);
+                    }
+                });
 
-        if (existingProduct) {
-            existingProduct.amount += 1;
-            console.log(`Количество товара "${productData.name}" увеличено на 1.`);
-        } else {
-            cartList.push({
-                id: productData.id,
-                name: productData.name,
-                description: productData.description,
-                img: productData.img,
-                price: productData.price,
-                amount: 1
-            });
-            console.log(`Товар "${productData.name}" добавлен в корзину.`);
-        }
+                minusBtn.addEventListener('mousedown', () => {
+                    minusBtn.classList.add('cart_count_change_btns_active');
+                });
 
-        saveCart();
-        updateCartCount();
-        updateCartLabel();
+                minusBtn.addEventListener('mouseup', () => {
+                    minusBtn.classList.remove('cart_count_change_btns_active');
+                });
 
-        console.log('Корзина после добавления товара:', cartList);
+                plusBtn.addEventListener('mousedown', () => {
+                    plusBtn.classList.add('cart_count_change_btns_active');
+                });
 
-        const countControls = document.createElement('div');
-        btn.replaceWith(countControls);
-        countControls.classList.add('count_controls');
-        countControls.innerHTML = `
-            <div class="count_controls">
-                <button class="btn-reset cart_count_change_btns minus_button">-</button>
-                <span class="cart_number">${existingProduct ? existingProduct.amount : 1}</span>
-                <button class="btn-reset cart_count_change_btns plus_button">+</button>
-            </div>`;
+                plusBtn.addEventListener('mouseup', () => {
+                    plusBtn.classList.remove('cart_count_change_btns_active');
+                });
 
-        const minusBtn = countControls.querySelector('.minus_button');
-        const plusBtn = countControls.querySelector('.plus_button');
-        const countProductRender = countControls.querySelector('.cart_number');
+                plusBtn.addEventListener('click', () => {
+                    countProductInCart += 1;
+                    countProductRender.textContent = countProductInCart;
+                    cartCount += 1;
+                    localStorage.setItem('cartCount', cartCount);
+                    cart.updateCount(productId, countProductInCart);
+                });
 
-        minusBtn.addEventListener('click', () => {
-            const cartItem = cartList.find(item => item.id === productId);
-            if (cartItem.amount > 1) {
-                cartItem.amount -= 1;
-                countProductRender.textContent = cartItem.amount;
-                console.log(`Количество товара "${productData.name}" уменьшено на 1.`);
-            } else {
-                cartList = cartList.filter(item => item.id !== productId);
-                countControls.replaceWith(btn);
-                console.log(`Товар "${productData.name}" удален из корзины.`);
+                cart.addItem(productId, countProductInCart);
+
             }
-            saveCart();
-            updateCartCount();
-            updateCartLabel();
-        });
 
-        plusBtn.addEventListener('click', () => {
-            const cartItem = cartList.find(item => item.id === productId);
-            cartItem.amount += 1;
-            countProductRender.textContent = cartItem.amount;
-            console.log(`Количество товара "${productData.name}" увеличено на 1.`);
-            saveCart();
-            updateCartCount();
-            updateCartLabel();
-        });
-    }
-
-    fetch('./data/data.json')
-        .then(response => response.json())
-        .then(data => {
-            productData = data.find(product => product.id === productId);
-
-            if (productData) {
-                document.querySelector('.routing_card_url').textContent = productData.name;
-                document.querySelector('.card_h2').textContent = productData.name;
-                document.querySelector('.productImage').src = productData.img;
-                document.querySelector('.productImage').alt = productData.name;
-                document.querySelector('.productPrice').textContent = `${productData.price} ₽`;
-                document.querySelector('.productKcal').textContent = productData.kcal;
-                document.querySelector('.productProteins').textContent = productData.proteins;
-                document.querySelector('.productFats').textContent = productData.fats;
-                document.querySelector('.productCarbohydrates').textContent = productData.carbohydrates;
-                document.querySelector('.productDescription').textContent = productData.description;
-                document.querySelector('.productComposition').textContent = productData.composition;
-
-                const cartBtn = document.querySelector('.card_btn_cart');
-                const cartBtnMobile = document.querySelector('.btn_media_cart_card');
-
-                if (cartBtn) {
-                    cartBtn.addEventListener('click', () => handleCartButtonClick(cartBtn));
-                }
-
-                if (cartBtnMobile) {
-                    cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
-                }
-
-
-                updateCartLabel();
-            } else {
-                window.location.href = 'index1.html';
+            if (cartBtn) {
+                cartBtn.addEventListener('click',() => handleCartButtonClick(cartBtn));
             }
-        });
 
-    const energyBtnMedia = document.querySelector('.energy_btn_media');
-    const energyValueWrapperMedia = document.createElement('div');
-    energyBtnMedia.addEventListener('click', () => {
-        energyBtnMedia.replaceWith(energyValueWrapperMedia);
-        energyValueWrapperMedia.classList.add('media_card_container_energy');
-        energyValueWrapperMedia.innerHTML = `
+            if (cartBtnMobile) {
+                cartBtnMobile.addEventListener('click', () => handleCartButtonClick(cartBtnMobile));
+            }
+        } else {
+            window.location.href = 'index1.html';
+        }
+
+        const energyBtnMedia = document.querySelector('.energy_btn_media');
+        const energyValueWrapperMedia = document.createElement('div');
+        energyBtnMedia.addEventListener('click', () => {
+            energyBtnMedia.replaceWith(energyValueWrapperMedia);
+            energyValueWrapperMedia.classList.add('media_card_container_energy');
+            energyValueWrapperMedia.innerHTML = `
                 <div class="media_card_return">
                     <span class="btn ">КБЖУ на 1 порцию</span> 
                     <button class="btn-reset hide_energy_media">
@@ -184,10 +144,13 @@ document.addEventListener('DOMContentLoaded', () => {
                       </div>
                 </div>
             `;
-        const hideEnergyMedia = energyValueWrapperMedia.querySelector('.hide_energy_media');
+            const hideEnergyMedia = energyValueWrapperMedia.querySelector('.hide_energy_media');
 
-        hideEnergyMedia.addEventListener('click', () => {
-            energyValueWrapperMedia.replaceWith(energyBtnMedia);
+            hideEnergyMedia.addEventListener('click', () => {
+                energyValueWrapperMedia.replaceWith(energyBtnMedia);
+            })
         })
-    })
-});
+    });
+
+
+

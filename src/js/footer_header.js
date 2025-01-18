@@ -3,7 +3,7 @@ const headerNavLinks = document.querySelectorAll('.link_style');
 const productId = localStorage.getItem('selectedProductId');
 const totalPriceElem = document.querySelector('#totalPrice');
 
-fetch('./data/data.json')
+fetch('../src/data/data.json')
     .then(response => response.json())
     .then(data => {
         const productData = data.find(product => product.id === productId);
