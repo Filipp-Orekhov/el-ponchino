@@ -27,7 +27,7 @@ export function toppingHandler(button, glaze, toppings, toppingZIndex) {
         // Создаем элемент изображения для топпинга
         const toppingLayer = document.createElement('img');
         toppingLayer.classList.add('image-layer');
-        toppingLayer.src = `../../images/topping/${topping.image}`;
+        toppingLayer.src = `${topping.image}`;
         toppingLayer.style.zIndex = toppingZIndex; // Устанавливаем уникальный z-index
         toppingLayer.alt = topping.image;
         toppingLayer.id = `topping-layer-${topping.image}`;
