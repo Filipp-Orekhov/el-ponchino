@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Функция для обработки нажатия кнопки добавления товара в корзину
+
     function handleCartButtonClick(btn) {
         if (!productData) {
             console.error("Данные о товаре не загружены");
