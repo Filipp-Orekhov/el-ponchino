@@ -10,7 +10,7 @@ const totalPriceElem = document.querySelector('#totalPrice'); // Элемент 
 const store = [
   {
     id:'11',
-    img: './../../images/boxes/Xmas_box1.png',
+    img: '/el-ponchino/images/boxes/Xmas_box1.png',
     name: 'Новогодний набор 1',
     description:'воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка конфети',
     price: 1700
@@ -26,7 +26,7 @@ const store = [
 
   {
     id:'13',
-    img:  './../images/boxes/box2.png',
+    img:  '../../images/boxes/box2.png',
     name: 'Фруктовый микс',
     description:'воздушное тесто, фруктовая начинка, разноцветная глазурь, посыпка кокос',
     price: 1700
@@ -34,7 +34,7 @@ const store = [
 
   {
     id:'14',
-    img:  './../images/boxes/box1.png',
+    img:  '../../../images/boxes/box1.png',
     name: 'Шоколадный набор 1',
     description:'воздушное тесто,  карамельная и фруктовая начинка, глаузурь  - молочный и белый шоколад, посыпка орех',
     price: 1700
@@ -50,7 +50,7 @@ const store = [
 
   {
     id:'21',
-    img:  '../../images/menu_donuts/xmas1.png',
+    img:  './../../images/menu_donuts/xmas1.png',
     name: 'Елочка',
     description:'воздушное тесто, карамельная начинка,разноцветная глазурь',
     price: 189
